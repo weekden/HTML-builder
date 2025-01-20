@@ -18,9 +18,9 @@ promises.readdir(folderPath, { withFileTypes: true }).then(
             console.error(error);
             return;
           }
-          const fileSize = info.size;
+          const fileSize = info.size / 1000;
           resultInfo = `${fileName} - ${extFileName} - ${fileSize} kb`;
-          console.log(resultInfo);
+          console.table(resultInfo);
         });
       }
     });
